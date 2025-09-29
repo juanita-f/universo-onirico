@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo Onírico - Contacto</title>
+    <title>Contacto - Universo Onírico</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -25,9 +25,39 @@
         </nav>
     </header>
 
+    <section class="intro-gallery">
+        <img src="img/europa_despues_de_la_lluvia.jpg" alt="Europa despues de la lluvia">
+    </section>
+
     <main class="container">
-        <section>
-            <h2>Contacto</h2>
+        <section class="contact-section">
+            <div class="contact-form">
+                <h2>¿Querés saber más sobre surrealismo? ¡Escribinos!</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consulta">Consulta</label>
+                        <textarea id="consulta" name="consulta" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact-images">
+            <div class="img-container rectangular-img">
+                <img src="img/el_gran_masturbador.jpg" alt="El gran masturbador">
+            </div>
+            <div class="img-container square-img">
+                <img src="img/casa_batlo.jpg" alt="Dalí">
+            </div>
         </section>
     </main>
 

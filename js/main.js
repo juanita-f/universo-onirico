@@ -1,3 +1,23 @@
+// Funciones globales para el Modal
+function openModal(src, title, description) {
+    const modal = document.getElementById('gallery-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalDesc = document.getElementById('modal-desc');
+
+    if (modal && modalImg && modalDesc) {
+        modalImg.src = src;
+        modalDesc.innerHTML = `<strong>${title}</strong><p>${description}</p>`;
+        modal.style.display = 'flex';
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('gallery-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // Lógica del Slider
@@ -10,46 +30,54 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentIndex = 0;
 
         const setSlidePosition = () => {
-            if (slides.length > 0) {
+            if (slides.length > 0 && slides[0]) {
                 const slideWidth = slides[0].getBoundingClientRect().width;
-                track.style.transform = 'translateX(' + (-currentIndex * slideWidth) + 'px)';
+                if (slideWidth > 0) {
+                    track.style.transform = 'translateX(' + (-currentIndex * slideWidth) + 'px)';
+                }
             }
         }
 
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slideCount;
-            setSlidePosition();
-        });
+        if (nextButton && prevButton) {
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                setSlidePosition();
+            });
 
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-            setSlidePosition();
-        });
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                setSlidePosition();
+            });
+        }
 
-        // Reajustar en caso de que cambie el tamaño de la ventana
         window.addEventListener('resize', setSlidePosition);
-        // Llamada inicial para establecer la posición
         setSlidePosition();
     }
 
-    // Lógica del Modal (si se usa en otras partes del sitio)
+    // Lógica del Modal
     const modal = document.getElementById('gallery-modal');
     if (modal) {
-        const closeButton = document.querySelector('.close-button');
-
-        const closeModal = () => {
-            modal.style.display = "none";
-        }
+        const closeButton = modal.querySelector('.close-button');
 
         if(closeButton) {
             closeButton.addEventListener('click', closeModal);
         }
 
         modal.addEventListener('click', (event) => {
-            // Si se hace clic en el fondo oscuro
             if (event.target === modal) {
                 closeModal();
             }
         });
     }
+
+    // Lógica para las imágenes de la galería en influencia.html
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    galleryImages.forEach(image => {
+        image.addEventListener('click', () => {
+            const src = image.getAttribute('src');
+            const title = image.dataset.title;
+            const description = image.dataset.description;
+            openModal(src, title, description);
+        });
+    });
 });

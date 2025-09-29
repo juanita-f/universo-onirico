@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo Onírico - Influencia</title>
+    <title>Surrealismo | Influencia</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -18,16 +18,69 @@
                 <li><a href="historia.html">Historia</a></li>
                 <li><a href="artistas.html">Artistas</a></li>
                 <li><a href="obras.html">Obras</a></li>
-                <li><a href="influencia.html" class="active">Influencia</a></li>
+                <li><a href="influencia.html" id="indicador">Influencia</a></li>
                 <li><a href="actualidad.html">Actualidad</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section>
-            <h2>Influencia</h2>
+    <main>
+        <section id="bloque1" class="influencia-bloque">
+            <h2>El eco del surrealismo</h2>
+            <div class="galeria-eco">
+                <div class="fila-superior">
+                    <img src="img/el_mundo_maya.jpg" alt="El Mundo Mágico de los Mayas" class="gallery-image" data-title="El Mundo Mágico de los Mayas" data-description="Leonora Carrington. Una obra que fusiona mitología, misticismo y autobiografía, reflejando la influencia del esoterismo y el arte popular mexicano en su visión surrealista.">
+                    <img src="img/creacion_de_las_aves.jpg" alt="Creación de las Aves" class="gallery-image" data-title="Creación de las Aves" data-description="Remedios Varo. Representa a una figura mágica que, con la luz de una estrella y la música de un violín, da vida a las aves. Un ejemplo de la mezcla de ciencia, alquimia y fantasía en su obra.">
+                </div>
+                <div class="fila-media">
+                    <div class="columna-izquierda">
+                        <img src="img/maman.jpg" alt="Escultura Maman" class="gallery-image" data-title="Maman" data-description="Louise Bourgeois. Esta monumental escultura de una araña es una oda a su madre, tejedora de tapices. Explora temas de maternidad, fragilidad y protección con una fuerza visceral post-surrealista.">
+                    </div>
+                    <div class="columna-derecha">
+                        <img src="img/medicine_slot_machine.jpg" alt="Obra Medicine Slot Machine" class="gallery-image" data-title="Medicine Slot Machine" data-description="Joseph Cornell. Famoso por sus 'cajas de assemblage', Cornell crea pequeños universos poéticos con objetos encontrados, influenciado por la yuxtaposición surrealista para evocar nostalgia y misterio.">
+                    </div>
+                </div>
+                <div class="fila-inferior">
+                    <img src="img/monogram.jpg" alt="Escultura Monogram" class="gallery-image" data-title="Monogram" data-description="Robert Rauschenberg. Una de sus 'Combines', esta obra fusiona pintura y escultura, incorporando objetos cotidianos como una cabra de angora disecada. Desafía las categorías del arte, un eco de la rebeldía surrealista.">
+                    <img src="img/i_love_you_my_ford.jpeg" alt="Obra I Love You My Ford" class="gallery-image" data-title="I Love You My Ford" data-description="Fundador y principal teórico del surrealismo, su 'Manifiesto Surrealista' de 1924 sentó las bases ideológicas del movimiento.">
+                </div>
+            </div>
+        </section>
+
+        <section id="bloque2" class="influencia-bloque">
+            <h2>Cuando los sueños llegan al museo</h2>
+            <div class="museo-zigzag">
+                <div class="zigzag-item">
+                    <div class="zigzag-img">
+                        <img src="img/obra_museo.jpg" alt=" Obra el Gran Masturbador en el Museo Reina Sofía">
+                    </div>
+                    <div class="zigzag-texto">
+                        <h3>Exposiciones Permanentes</h3>
+                        <p>El surrealismo se ha ganado un lugar de honor en los museos más importantes del mundo, como el MoMA, el Centro Pompidou y el Reina Sofía. Sus salas dedicadas no solo exhiben obras, sino que contextualizan el poder revolucionario del movimiento en la historia del arte.</p>
+                    </div>
+                </div>
+                <div class="zigzag-item reverse">
+                    <div class="zigzag-texto">
+                        <h3>Retrospectivas Exitosas</h3>
+                        <p>Las exposiciones retrospectivas de artistas como Salvador Dalí, René Magritte y Joan Miró baten récords de asistencia. Estos eventos reafirman la popularidad inagotable del surrealismo y su capacidad para dialogar con nuevas generaciones de espectadores.</p>
+                    </div>
+                    <div class="zigzag-img">
+                        <img src="img/exposicion.jpg" alt="Exposición del Surrealismo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bloque3" class="influencia-bloque">
+            <h2>Actualidad</h2>
+            <div class="actualidad-puente">
+                <img src="img/golconda.jpg" alt="Obra Golconda de Magritte como puente a la actualidad.">
+                <div class="texto-superpuesto">
+                    <p>Desde la publicidad y la moda hasta el cine y el arte digital, la estética surrealista sigue siendo una fuente inagotable de inspiración, resonando con fuerza en la cultura contemporánea.</p>
+                    <a href="actualidad.html" class="boton-ver-mas">Explorar Actualidad</a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -39,6 +92,17 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Modal -->
+    <div id="gallery-modal" class="modal">
+        <span class="close-button">&times;</span>
+        <div class="modal-content">
+            <img class="modal-image" id="modal-img">
+            <p class="modal-description" id="modal-desc"></p>
+        </div>
+    </div>
+
+
+
+    <script src="js/main.js" defer></script>
 </body>
 </html>
