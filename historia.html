@@ -9,9 +9,15 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-top">
+       <div class="header-top">
             <a href="index.html"><h1 class="logo">Universo Onírico</h1></a>
-            <img src="img/lupa.svg" alt="Búsqueda" class="search-icon">
+           <div class="search-container">
+                <form action="resultados_buscar.php" method="post">
+              <div class="search-bar">
+                    <input type="search" name="buscar" placeholder="Buscar..." />
+                </div>
+              </form>
+            </div>
         </div>
         <nav class="navigation">
             <ul>

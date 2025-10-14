@@ -1130,3 +1130,18 @@ h2 {
     height: 100%;
     object-fit: cover;
 }
+
+/* Search bar styles */
+.search-container form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
