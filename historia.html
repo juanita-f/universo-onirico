@@ -6,22 +6,24 @@
     <title>Universo Onírico - Historia del Surrealismo</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="header">
        <div class="header-top">
             <a href="index.html"><h1 class="logo">Universo Onírico</h1></a>
            <div class="search-container">
-                <form action="resultados_buscar.php" method="post">
-              <div class="search-bar">
-                    <input type="search" name="buscar" placeholder="Buscar..." />
-                </div>
-              </form>
+                <form action="resultados_buscar.php" method="post" class="search-form">
+                    <input type="search" name="buscar" placeholder="Buscar..." class="search-input"/>
+                    <button type="submit" class="search-button">
+                        <i class="material-icons">search</i>
+                    </button>
+                </form>
             </div>
         </div>
         <nav class="navigation">
             <ul>
-                <li><a href="historia.html" class="active">Historia</a></li>
+                <li><a href="historia.html"id="indicador">Historia</a></li>
                 <li><a href="artistas.html">Artistas</a></li>
                 <li><a href="obras.html">Obras</a></li>
                 <li><a href="influencia.html">Influencia</a></li>
