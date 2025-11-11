@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Universo Onírico</title>
+    <title>Universo Onírico - Actualidad</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,9 +20,9 @@
                         <i class="material-icons">search</i>
                     </button>
                 </form>
-                <a href="usuario.html" class="user-icon">
+                <a href="salir.php" class="user-icon">
                     <span class="material-symbols-outlined">
-                        account_circle
+                        logout
                     </span>
                 </a>
             </div>
@@ -34,48 +34,15 @@
                 <li><a href="obras.html">Obras</a></li>
                 <li><a href="influencia.html">Influencia</a></li>
                 <li><a href="actualidad.html">Actualidad</a></li>
-                <li><a href="contacto.html"id="indicador">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                 <li><a href="catalogo.html"id="indicador">Catalogo</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="intro-gallery">
-        <img src="img/europa_despues_de_la_lluvia.jpg" alt="Europa despues de la lluvia">
-    </section>
 
-    <main class="container">
-        <section class="contact-section">
-            <div class="contact-form">
-                <h2>¿Querés saber más sobre surrealismo? ¡Escribinos!</h2>
-                <form action="enviar.php" method="post">
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="consulta">Mensaje</label>
-                        <textarea id="consulta" name="comentario" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Enviar</button>
-                </form>
-            </div>
-        </section>
 
-        <section class="contact-images">
-            <div class="img-container rectangular-img">
-                <img src="img/el_gran_masturbador.jpg" alt="El gran masturbador">
-            </div>
-            <div class="img-container square-img">
-                <img src="img/casa_batlo.jpg" alt="Dalí">
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+     <footer class="footer">
         <p class="quote">"La diferencia entre un loco y yo es que yo no estoy loco." - Dalí</p>
         <div class="contact-info">
             <img src="img/sobre.svg" alt="Contacto">
