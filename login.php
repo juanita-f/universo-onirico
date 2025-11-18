@@ -36,38 +36,51 @@
                 <li><a href="influencia.html">Influencia</a></li>
                 <li><a href="actualidad.html">Actualidad</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                 <li><a href="catalogo.html"id="indicador">Catalogo</a></li>
+                 <li><a href="catalogo.php">Catalogo</a></li>
             </ul>
         </nav>
     </header>
+    <main class="container">
+        <section class="contact-section">
+            <div class="contact-form">
+                <?php
+                $usuario=$_POST['usuario'];
+                $password= md5($_POST['password']);
 
-<body>
+                include("conexion.php");
 
-<?php
-$usuario=$_POST['usuario'];
-$password= md5($_POST['password']);
+                $consulta=mysqli_query($conexion, "SELECT nombre FROM usuarios WHERE usuario='$usuario' AND password='$password'");
 
-include("conexion.php");
+                $resultado=mysqli_num_rows($consulta);
 
-$consulta=mysqli_query($conexion, "SELECT nombre FROM usuarios WHERE usuario='$usuario' AND password='$password'");
+                if($resultado!=0){
+                    $respuesta=mysqli_fetch_assoc($consulta);
+                    
+                    $_SESSION['nombre']=$respuesta['nombre'];
+                        
+                    echo "<h2>Hola ".$_SESSION['nombre']."</h2>";
+                    echo "Tienes acceso al<br/>";;
+                    echo "<a href='catalogo.php'>Catalogo</a>";	
 
-$resultado=mysqli_num_rows($consulta);
 
-if($resultado!=0){
-	$respuesta=mysqli_fetch_assoc($consulta);
-	
-	$_SESSION['nombre']=$respuesta['nombre'];
-		
-		echo "Hola ".$_SESSION['nombre']." "."<br />";
-		echo "Acceso al catalogo.<br/>";
-		echo "<a href='panel.html'>Panel</a>";	
+                }else{
+                    echo "<h2>No es un usuario registrado</h2>";
+                    include ("form_registro2.php");
+                }
+                ?>
+            </div>
+        </section>
+    </main>
 
-}else{
-	echo "No es un usuario registrado";
-	include ("form_registro.php");
-}
+    <footer class="footer">
+        <p class="quote">"La diferencia entre un loco y yo es que yo no estoy loco." - Dalí</p>
+        <div class="contact-info">
+            <img src="img/sobre.svg" alt="Contacto">
+            <p>universo.onirico@gmail.com</p>
+            
+        </div>
+    </footer>
 
-?>
-
+    <script src="js/main.js"></script>
 </body>
 </html>
