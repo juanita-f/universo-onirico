@@ -2,9 +2,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<title>Panel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Onírico - Actualidad</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <a href="index.html"><h1 class="logo">Universo Onírico</h1></a>
+           <div class="search-container">
+                <form action="resultados_buscar.php" method="post" class="search-form">
+                    <input type="search" name="buscar" placeholder="Buscar..." class="search-input"/>
+                    <button type="submit" class="search-button">
+                        <i class="material-icons">search</i>
+                    </button>
+                </form>
+                <a href="salir.php" class="user-icon">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                </a>
+            </div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="artistas.html">Artistas</a></li>
+                <li><a href="obras.html">Obras</a></li>
+                <li><a href="influencia.html">Influencia</a></li>
+                <li><a href="actualidad.html">Actualidad</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                 <li><a href="catalogo.html"id="indicador">Catalogo</a></li>
+            </ul>
+        </nav>
+    </header>
 <?php
 
 if(isset($_SESSION['nombre']) and isset($_SESSION['apellido']) ){
@@ -12,17 +47,25 @@ if(isset($_SESSION['nombre']) and isset($_SESSION['apellido']) ){
 echo "Hola! ";
 echo $_SESSION['nombre']." ";
 echo $_SESSION['apellido'];
-echo "<p><img src='imagenes/cuadro.jpg' /></p>";
+echo "<p><img href='catalogo.php'/></p>";
 echo "<a href='salir.php'>Cerrar sesion</a>";
 
 	
 }else{
 	echo "Solo usuarios registrados...";
-	include("form_registro.php");
-	include("form_login.php");
+	header("location:form_registro.php");
 }
 ?>
 
 <body>
+<footer class="footer">
+        <p class="quote">"La diferencia entre un loco y yo es que yo no estoy loco." - Dalí</p>
+        <div class="contact-info">
+            <img src="img/sobre.svg" alt="Contacto">
+            <p>universo.onirico@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
